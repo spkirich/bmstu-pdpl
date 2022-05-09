@@ -19,4 +19,4 @@ long double sadd80(long double, long double);
 //! Аппаратное 80-битное сложение
 long double hadd80(long double, long double);
 
-#define // PROC_H
+#endif // PROC_H
