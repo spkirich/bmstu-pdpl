@@ -14,3 +14,6 @@ out/prof: src/prof.c inc/prof.h
 
 out/prec: src/prec.c inc/prec.h
 	$(CC) $(CFLAGS) $< -o $@
+
+clean:
+	$(RM) out/*
