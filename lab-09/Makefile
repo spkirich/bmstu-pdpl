@@ -5,7 +5,9 @@ CC := gcc
 CFLAGS := -Wall -Wextra -Wpedantic -Iinc -g
 
 # Фиктивные цели
-.PHONY: clean
+.PHONY: all clean
+
+all: out/prof out/prec
 
 out/prof: src/prof.c inc/prof.h
 	$(CC) $(CFLAGS) $< -o $@
