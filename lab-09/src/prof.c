@@ -49,8 +49,8 @@ float sadd32(float a, float b) {
 float hadd32(float a, float b) {
     float c;
 
-    // Кладём на стек b и a, прибавляем b к a, забираем как c
-    asm("fadd %%st(1), %%st(0)" : "=t" (c) : "0" (a), "u" (b));
+    // Кладём на стек b и a, прибавляем a к b
+    asm("faddp" : "=t" (c) : "0" (a), "u" (b));
 
     return c;
 }
@@ -62,8 +62,8 @@ double sadd64(double a, double b) {
 double hadd64(double a, double b) {
     double c;
 
-    // Кладём на стек b и a, прибавляем b к a, забираем как c
-    asm("fadd %%st(1), %%st(0)" : "=t" (c) : "0" (a), "u" (b));
+    // Кладём на стек b и a, прибавляем a к b
+    asm("faddp" : "=t" (c) : "0" (a), "u" (b));
 
     return c;
 }
@@ -75,8 +75,8 @@ long double sadd80(long double a, long double b) {
 long double hadd80(long double a, long double b) {
     long double c;
 
-    // Кладём на стек b и a, прибавляем b к a, забираем как c
-    asm("fadd %%st(1), %%st(0)" : "=t" (c) : "0" (a), "u" (b));
+    // Кладём на стек b и a, прибавляем a к b
+    asm("faddp" : "=t" (c) : "0" (a), "u" (b));
 
     return c;
 }
@@ -88,8 +88,8 @@ float smul32(float a, float b) {
 float hmul32(float a, float b) {
     float c;
 
-    // Кладём на стек b и a, домножаем a на b, забираем как c
-    asm("fmul %%st(1), %%st(0)" : "=t" (c) : "0" (a), "u" (b));
+    // Кладём на стек b и a, домножаем b на a
+    asm("fmulp" : "=t" (c) : "0" (a), "u" (b));
 
     return c;
 }
@@ -101,8 +101,8 @@ double smul64(double a, double b) {
 double hmul64(double a, double b) {
     double c;
 
-    // Кладём на стек b и a, домножаем a на b, забираем как c
-    asm("fmul %%st(1), %%st(0)" : "=t" (c) : "0" (a), "u" (b));
+    // Кладём на стек b и a, домножаем b на a
+    asm("fmulp" : "=t" (c) : "0" (a), "u" (b));
 
     return c;
 }
@@ -114,8 +114,8 @@ long double smul80(long double a, long double b) {
 long double hmul80(long double a, long double b) {
     long double c;
 
-    // Кладём на стек b и a, домножаем a на b, забираем как c
-    asm("fmul %%st(1), %%st(0)" : "=t" (c) : "0" (a), "u" (b));
+    // Кладём на стек b и a, домножаем b на a
+    asm("fmulp" : "=t" (c) : "0" (a), "u" (b));
 
     return c;
 }
