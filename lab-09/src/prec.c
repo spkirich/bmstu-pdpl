@@ -18,7 +18,7 @@ int main() {
 long double fsin(long double x) {
     long double y;
 
-    // Кладём на вершину, берём синус
+    // Кладём на стек x, берём синус
     asm("fsin" : "=t" (y) : "0" (x));
 
     return y;
@@ -27,7 +27,7 @@ long double fsin(long double x) {
 long double fldpi() {
     long double p;
 
-    // Кладём на вершину π
+    // Кладём на стек π
     asm("fldpi" : "=t" (p));
 
     return p;
