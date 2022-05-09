@@ -3,6 +3,9 @@
 // Профилирование
 #include <time.h>
 
+// Проверки условий
+#include <assert.h>
+
 #include "prof.h"
 
 #define LOOP 1e+8
@@ -12,7 +15,7 @@
     clock_t s = clock();                                    \
                                                             \
     for (int i = 0; i < LOOP; i++)                          \
-        func(2.0, 2.0);                                     \
+        assert(func(2.0, 2.0) == 4.0);                      \
                                                             \
     clock_t t = clock();                                    \
                                                             \
