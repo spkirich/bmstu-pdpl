@@ -19,4 +19,22 @@ long double sadd80(long double, long double);
 //! Аппаратное 80-битное сложение
 long double hadd80(long double, long double);
 
+//! Программное 32-битное умножение
+float smul32(float, float);
+
+//! Аппаратное 32-битное умножение
+float hmul32(float, float);
+
+//! Программное 64-битное умножение
+double smul64(double, double);
+
+//! Аппаратное 64-битное умножение
+double hmul64(double, double);
+
+//! Программное 80-битное умножение
+long double smul80(long double, long double);
+
+//! Аппаратное 80-битное умножение
+long double hmul80(long double, long double);
+
 #endif // PROC_H
