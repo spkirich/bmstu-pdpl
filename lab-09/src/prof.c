@@ -3,7 +3,7 @@
 // Профилирование
 #include <time.h>
 
-// Проверки условий
+// Проверка условий
 #include <assert.h>
 
 #include "prof.h"

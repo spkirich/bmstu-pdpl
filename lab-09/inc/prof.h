@@ -1,5 +1,5 @@
-#ifndef PROC_H
-#define PROC_H
+#ifndef PROF_H
+#define PROF_H
 
 //! Программное 32-битное сложение
 float sadd32(float, float);
@@ -37,4 +37,4 @@ long double hadd80(long double, long double);
 //! Аппаратное 80-битное умножение
 long double hmul80(long double, long double);
 
-#endif // PROC_H
+#endif // PROF_H
