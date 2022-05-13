@@ -11,122 +11,108 @@
 #define LOOP 1e+8
 
 // Не очень приятный макрос для профилирования разных функций
-#define PROF(desc, func) do {                               \
+#define PROF(func, type) do {                               \
+    type a = 2.0, b = 2.0, c;                               \
+                                                            \
     clock_t s = clock();                                    \
                                                             \
-    for (int i = 0; i < LOOP; i++)                          \
-        assert(func(2.0, 2.0) == 4.0);                      \
+    for (int i = 0; i < LOOP; i++) {                        \
+        func(&a, &b, &c);                                   \
+        assert(c == 4.0);                                   \
+    }                                                       \
                                                             \
     clock_t t = clock();                                    \
                                                             \
     printf("%s: %e s\n",                                    \
-        desc, (double) (t - s) / CLOCKS_PER_SEC / LOOP);    \
+        #func, (double) (t - s) / CLOCKS_PER_SEC / LOOP);   \
 } while (0)
 
 int main() {
-    PROF("Soft 32 + 32", sadd32);
-    PROF("Soft 32 * 32", smul32);
+    PROF(sadd32, float);
+    PROF(smul32, float);
 
-    PROF("Soft 64 + 64", sadd64);
-    PROF("Soft 64 * 64", smul64);
+    PROF(sadd64, double);
+    PROF(smul64, double);
 
 #ifdef X87
 
-    PROF("Soft 80 + 80", sadd80);
-    PROF("Soft 80 * 80", smul80);
+    PROF(sadd80, long double);
+    PROF(smul80, long double);
 
-    PROF("Hard 32 + 32", hadd32);
-    PROF("Hard 32 * 32", hmul32);
+    PROF(hadd32, float);
+    PROF(hmul32, float);
 
-    PROF("Hard 64 + 64", hadd64);
-    PROF("Hard 64 * 64", hmul64);
+    PROF(hadd64, double);
+    PROF(hmul64, double);
 
-    PROF("Hard 80 + 80", hadd80);
-    PROF("Hard 80 * 80", hmul80);
+    PROF(hadd80, long double);
+    PROF(hmul80, long double);
 
 #endif // X87
 
     return 0;
 }
 
-float sadd32(float a, float b) {
-    return a + b;
+void sadd32(float *a, float *b, float *c) {
+    *c = *a + *b;
 }
 
-float smul32(float a, float b) {
-    return a * b;
+void smul32(float *a, float *b, float *c) {
+    *c = *a * *b;
 }
 
-double sadd64(double a, double b) {
-    return a + b;
+void sadd64(double *a, double *b, double *c) {
+    *c = *a + *b;
 }
 
-double smul64(double a, double b) {
-    return a * b;
+void smul64(double *a, double *b, double *c) {
+    *c = *a * *b;
 }
 
 #ifdef X87
 
-long double sadd80(long double a, long double b) {
-    return a + b;
+void sadd80(long double *a, long double *b, long double *c) {
+    *c = *a + *b;
 }
 
-long double smul80(long double a, long double b) {
-    return a * b;
+void smul80(long double *a, long double *b, long double *c) {
+    *c = *a * *b;
 }
 
-float hadd32(float a, float b) {
-    float c;
+void hadd32(float *a, float *b, float *c) {
 
     // Кладём на стек b и a, прибавляем a к b
-    asm("faddp" : "=t" (c) : "0" (a), "u" (b));
-
-    return c;
+    asm("faddp" : "=t" (*c) : "0" (*a), "u" (*b));
 }
 
-float hmul32(float a, float b) {
-    float c;
+void hmul32(float *a, float *b, float *c) {
 
     // Кладём на стек b и a, домножаем b на a
-    asm("fmulp" : "=t" (c) : "0" (a), "u" (b));
-
-    return c;
+    asm("fmulp" : "=t" (*c) : "0" (*a), "u" (*b));
 }
 
-double hadd64(double a, double b) {
-    double c;
+void hadd64(double *a, double *b, double *c) {
 
     // Кладём на стек b и a, прибавляем a к b
-    asm("faddp" : "=t" (c) : "0" (a), "u" (b));
-
-    return c;
+    asm("faddp" : "=t" (*c) : "0" (*a), "u" (*b));
 }
 
-double hmul64(double a, double b) {
-    double c;
+void hmul64(double *a, double *b, double *c) {
 
     // Кладём на стек b и a, домножаем b на a
-    asm("fmulp" : "=t" (c) : "0" (a), "u" (b));
-
-    return c;
+    asm("fmulp" : "=t" (*c) : "0" (*a), "u" (*b));
 }
 
-long double hadd80(long double a, long double b) {
-    long double c;
+void hadd80(long double *a, long double *b, long double *c) {
 
     // Кладём на стек b и a, прибавляем a к b
-    asm("faddp" : "=t" (c) : "0" (a), "u" (b));
-
-    return c;
+    asm("faddp" : "=t" (*c) : "0" (*a), "u" (*b));
 }
 
-long double hmul80(long double a, long double b) {
-    long double c;
+void hmul80(long double *a, long double *b, long double *c) {
 
     // Кладём на стек b и a, домножаем b на a
-    asm("fmulp" : "=t" (c) : "0" (a), "u" (b));
-
-    return c;
+    asm("fmulp" : "=t" (*c) : "0" (*a), "u" (*b));
 }
 
 #endif // X87
