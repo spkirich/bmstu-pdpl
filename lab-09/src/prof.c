@@ -34,8 +34,6 @@ int main() {
     PROF(sadd64, double);
     PROF(smul64, double);
 
-#ifdef X87
-
     PROF(sadd80, long double);
     PROF(smul80, long double);
 
@@ -47,8 +45,6 @@ int main() {
 
     PROF(hadd80, long double);
     PROF(hmul80, long double);
-
-#endif // X87
 
     return 0;
 }
@@ -68,8 +64,6 @@ void sadd64(double *a, double *b, double *c) {
 void smul64(double *a, double *b, double *c) {
     *c = *a * *b;
 }
-
-#ifdef X87
 
 void sadd80(long double *a, long double *b, long double *c) {
     *c = *a + *b;
@@ -114,5 +108,3 @@ void hmul80(long double *a, long double *b, long double *c) {
     // Кладём на стек b и a, домножаем b на a
     asm("fmulp" : "=t" (*c) : "0" (*a), "u" (*b));
 }
-
-#endif // X87
