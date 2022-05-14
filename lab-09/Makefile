@@ -5,15 +5,20 @@ CC := gcc
 CFLAGS := -Wall -Wextra -Wpedantic -Iinc -g
 
 # Фиктивные цели
-.PHONY: all clean
+.PHONY: clean
 
-all: out/prof out/prec
+out/runner: out/main.o out/prof.o out/prec.o
+	$(CC) $^ -o $@
 
-out/prof: src/prof.c inc/prof.h
-	$(CC) $(CFLAGS) $< -o $@
+out/main.o: src/main.c inc/prof.h inc/prec.h
+	$(CC) -c $(CFLAGS) $< -o $@
 
-out/prec: src/prec.c inc/prec.h
-	$(CC) $(CFLAGS) $< -o $@
+out/prof.o: CFLAGS += -mno-sse
+out/prof.o: src/prof.c inc/prof.h
+	$(CC) -c $(CFLAGS) $< -o $@
+
+out/prec.o: src/prec.c inc/prec.h
+	$(CC) -c $(CFLAGS) $< -o $@
 
 clean:
 	$(RM) out/*
