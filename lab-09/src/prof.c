@@ -7,7 +7,7 @@ void sadd32(float *a, float *b, float *c) {
 void hadd32(float *a, float *b, float *c) {
 
     // Кладём на стек a и b, складываем
-    asm("faddp" : "=t" (*c) : "u" (*a), "0" (*b));
+    asm("faddp" : "=t" (*c) : "u" (*a), "0" (*b) : "st(1)");
 }
 
 void smul32(float *a, float *b, float *c) {
@@ -17,7 +17,7 @@ void smul32(float *a, float *b, float *c) {
 void hmul32(float *a, float *b, float *c) {
 
     // Кладём на стек a и b, умножаем
-    asm("fmulp" : "=t" (*c) : "u" (*a), "0" (*b));
+    asm("fmulp" : "=t" (*c) : "u" (*a), "0" (*b) : "st(1)");
 }
 
 void sadd64(double *a, double *b, double *c) {
@@ -27,7 +27,7 @@ void sadd64(double *a, double *b, double *c) {
 void hadd64(double *a, double *b, double *c) {
 
     // Кладём на стек a и b, складываем
-    asm("faddp" : "=t" (*c) : "u" (*a), "0" (*b));
+    asm("faddp" : "=t" (*c) : "u" (*a), "0" (*b) : "st(1)");
 }
 
 void smul64(double *a, double *b, double *c) {
@@ -37,7 +37,7 @@ void smul64(double *a, double *b, double *c) {
 void hmul64(double *a, double *b, double *c) {
 
     // Кладём на стек a и b, умножаем
-    asm("fmulp" : "=t" (*c) : "u" (*a), "0" (*b));
+    asm("fmulp" : "=t" (*c) : "u" (*a), "0" (*b) : "st(1)");
 }
 
 void sadd80(long double *a, long double *b, long double *c) {
@@ -47,7 +47,7 @@ void sadd80(long double *a, long double *b, long double *c) {
 void hadd80(long double *a, long double *b, long double *c) {
 
     // Кладём на стек a и b, складываем
-    asm("faddp" : "=t" (*c) : "u" (*a), "0" (*b));
+    asm("faddp" : "=t" (*c) : "u" (*a), "0" (*b) : "st(1)");
 }
 
 void smul80(long double *a, long double *b, long double *c) {
@@ -57,5 +57,5 @@ void smul80(long double *a, long double *b, long double *c) {
 void hmul80(long double *a, long double *b, long double *c) {
 
     // Кладём на стек a и b, умножаем
-    asm("fmulp" : "=t" (*c) : "u" (*a), "0" (*b));
+    asm("fmulp" : "=t" (*c) : "u" (*a), "0" (*b) : "st(1)");
 }
