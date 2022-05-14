@@ -2,39 +2,39 @@
 #define PROF_H
 
 //! Программное 32-битное сложение
-float sadd32(float, float);
+void sadd32(float *, float *, float *);
 
 //! Программное 32-битное умножение
-float smul32(float, float);
+void smul32(float *, float *, float *);
 
 //! Программное 64-битное сложение
-double sadd64(double, double);
+void sadd64(double *, double *, double *);
 
 //! Программное 64-битное умножение
-double smul64(double, double);
+void smul64(double *, double *, double *);
 
 //! Программное 80-битное сложение
-long double sadd80(long double, long double);
+void sadd80(long double *, long double *, long double *);
 
 //! Программное 80-битное умножение
-long double smul80(long double, long double);
+void smul80(long double *, long double *, long double *);
 
 //! Аппаратное 32-битное сложение
-float hadd32(float, float);
+void hadd32(float *, float *, float *);
 
 //! Аппаратное 32-битное умножение
-float hmul32(float, float);
+void hmul32(float *, float *, float *);
 
 //! Аппаратное 64-битное сложение
-double hadd64(double, double);
+void hadd64(double *, double *, double *);
 
 //! Аппаратное 64-битное умножение
-double hmul64(double, double);
+void hmul64(double *, double *, double *);
 
 //! Аппаратное 80-битное сложение
-long double hadd80(long double, long double);
+void hadd80(long double *, long double *, long double *);
 
 //! Аппаратное 80-битное умножение
-long double hmul80(long double, long double);
+void hmul80(long double *, long double *, long double *);
 
 #endif // PROF_H
