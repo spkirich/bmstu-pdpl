@@ -29,7 +29,7 @@ extern g_signal_connect_data
 
 section .data
 
-szEmpty        db            0 ; Пустая строка
+szResultLabel  db "       ", 0 ; Метка вывода
 szButtonLabel  db "Сложить", 0 ; Метка кнопки
 szEventClicked db "clicked", 0 ; Имя события
 
@@ -82,7 +82,7 @@ main: ; Точка входа
 
     ; Создаём метку C
 
-    mov  rdi, szEmpty
+    mov  rdi, szResultLabel
 
     call gtk_label_new
     mov  [hCLabel], rax
@@ -194,10 +194,24 @@ eventClicked: ; Обработчик события
     call gtk_entry_get_text
     mov  [lpBText], rax
 
+    ; Складываем цифры
+
+    xor  rcx, rcx
+
+    mov  rax, [lpAText]
+    mov  rbx, [lpBText]
+
+    add  rcx, [rax]
+    add  rcx, [rbx]
+
+    sub  rcx, '0'
+
+    mov  [szResultLabel], rcx
+
     ; Пишем сумму в метку
 
     mov  rdi, [hCLabel]
-    mov  rsi, [lpAText]
+    mov  rsi, szResultLabel
 
     call gtk_label_set_text
 
