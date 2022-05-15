@@ -1,7 +1,7 @@
 global main
 
 ; Цикл событий GTK+
-extern gtk_init, gtk_main
+extern gtk_init, gtk_main, gtk_main_quit
 
 ; Класс GtkWindow
 extern gtk_window_new
@@ -31,7 +31,9 @@ section .data
 
 szResultLabel  db "       ", 0 ; Метка вывода
 szButtonLabel  db "Сложить", 0 ; Метка кнопки
-szEventClicked db "clicked", 0 ; Имя события
+
+szEventClicked db "clicked", 0 ; Имя события нажатия на кнопку
+szEventDestroy db "destroy", 0 ; Имя события завершения
 
 section .bss
 
@@ -93,19 +95,6 @@ main: ; Точка входа
     call gtk_button_new_with_label
     mov  [hButton], rax
 
-    ; Назначаем обработчик события
-
-    mov  rdi, [hButton]
-
-    mov  rsi, szEventClicked
-    mov  rdx,   eventClicked
-
-    mov  rcx, 0x0
-    mov   r8, 0x0
-    mov   r9, 0x0
-
-    call g_signal_connect_data
-
     ; Создаём компоновщик
 
     mov  rdi, 0x01
@@ -160,6 +149,32 @@ main: ; Точка входа
 
     call gtk_container_add
 
+    ; Назначаем обработчик нажатия на кнопку
+
+    mov  rdi, [hButton]
+
+    mov  rsi, szEventClicked
+    mov  rdx,   eventClicked
+
+    mov  rcx, 0x0
+    mov   r8, 0x0
+    mov   r9, 0x0
+
+    call g_signal_connect_data
+
+    ; Назначаем обработчик завершения
+
+    mov  rdi, [hButton]
+
+    mov  rsi, szEventDestroy
+    mov  rdx, gtk_main_quit
+
+    mov  rcx, 0x0
+    mov   r8, 0x0
+    mov   r9, 0x0
+
+    call g_signal_connect_data
+
     ; Отображаем главное окно
 
     mov  rdi, [hWindow]
@@ -177,7 +192,7 @@ main: ; Точка входа
     leave
     ret
 
-eventClicked: ; Обработчик события
+eventClicked: ; Обработчик нажатия на кнопку
 
     push rbp
     mov  rbp, rsp
