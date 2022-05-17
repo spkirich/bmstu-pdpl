@@ -16,8 +16,11 @@ ASFLAGS := -felf64
 out/runner: out/main.o
 	$(CC)  $(CFLAGS) $^ -o $@
 
-out/main.o: src/main.s
+out/main.o: src/main.s | out
 	$(AS) $(ASFLAGS) $< -o $@
 
+out:
+	mkdir $@
+
 clean:
-	$(RM) out/*
+	$(RM) -r out
