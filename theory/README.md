@@ -24,7 +24,9 @@
 08. [Команды пересылки данных
 ](question-08.md)
 
-09. _To be continued..._
+09. [Команда сравнения
+](question-09.md)
+
 10. _To be continued..._
 11. _To be continued..._
 12. _To be continued..._
