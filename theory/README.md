@@ -12,7 +12,9 @@
 04. [Сегментная модель памяти в архитектуре 8086
 ](question-04.md)
 
-05. _To be continued..._
+05. [Процессор 8086. Регистры общего назначения
+](question-05.md)
+
 06. _To be continued..._
 07. _To be continued..._
 08. _To be continued..._
