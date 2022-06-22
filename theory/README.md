@@ -21,7 +21,9 @@
 07. [Процессор 8086. Регистр флагов
 ](question-07.md)
 
-08. _To be continued..._
+08. [Команды пересылки данных
+](question-08.md)
+
 09. _To be continued..._
 10. _To be continued..._
 11. _To be continued..._
