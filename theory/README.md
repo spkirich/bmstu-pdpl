@@ -7,7 +7,7 @@
 ](question-02.md)
 
 03. [Виды памяти ЭВМ. Запуск и исполнение программы
-](question-03)
+](question-03.md)
 
 04. _To be continued..._
 05. _To be continued..._
