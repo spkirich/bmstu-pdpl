@@ -6,7 +6,9 @@
 02. [Машинные команды. Машинный код. Понятие языка ассемблера
 ](question-02.md)
 
-03. _To be continued..._
+03. [Виды памяти ЭВМ. Запуск и исполнение программы
+](question-03)
+
 04. _To be continued..._
 05. _To be continued..._
 06. _To be continued..._
