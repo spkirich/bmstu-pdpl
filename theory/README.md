@@ -18,7 +18,9 @@
 06. [Процессор 8086. Сегментные регистры. Адресация в реальном режиме
 ](question-06.md)
 
-07. _To be continued..._
+07. [Процессор 8086. Регистр флагов
+](question-07.md)
+
 08. _To be continued..._
 09. _To be continued..._
 10. _To be continued..._
