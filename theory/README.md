@@ -36,7 +36,9 @@
 15. [Команда трансляции по таблице
 ](question-15.md)
 
-16. _To be continued..._
+16. [Команда вычисления эффективного адреса
+](question-16.md)
+
 17. _To be continued..._
 18. _To be continued..._
 19. _To be continued..._
