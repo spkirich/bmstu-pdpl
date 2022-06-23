@@ -39,7 +39,9 @@
 16. [Команда вычисления эффективного адреса
 ](question-16.md)
 
-17. _To be continued..._
+17. [Структура программы на языке ассемблера. Модули. Сегменты
+](question-17.md)
+
 18. _To be continued..._
 19. _To be continued..._
 20. _To be continued..._
