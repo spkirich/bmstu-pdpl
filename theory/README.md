@@ -32,7 +32,10 @@
 12. _To be continued..._
 13. _To be continued..._
 14. _To be continued..._
-15. _To be continued..._
+
+15. [Команда трансляции по таблице
+](question-15.md)
+
 16. _To be continued..._
 17. _To be continued..._
 18. _To be continued..._
