@@ -48,7 +48,10 @@
 21. _To be continued..._
 22. _To be continued..._
 23. _To be continued..._
-24. _To be continued..._
+
+24. [Математический сопроцессор. Типы данных
+](question-24.md)
+
 25. _To be continued..._
 26. _To be continued..._
 27. _To be continued..._
