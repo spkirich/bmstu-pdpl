@@ -52,7 +52,9 @@
 24. [Математический сопроцессор. Типы данных
 ](question-24.md)
 
-25. _To be continued..._
+25. [Математический сопроцессор. Регистры
+](question-25.md)
+
 26. _To be continued..._
 27. _To be continued..._
 28. _To be continued..._
