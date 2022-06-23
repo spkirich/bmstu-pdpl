@@ -55,7 +55,9 @@
 25. [Математический сопроцессор. Регистры
 ](question-25.md)
 
-26. _To be continued..._
+26. [Математический сопроцессор. Классификация команд
+](question-26.md)
+
 27. _To be continued..._
 28. _To be continued..._
 29. _To be continued..._
