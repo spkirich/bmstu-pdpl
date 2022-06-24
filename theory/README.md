@@ -31,7 +31,9 @@
 11. _To be continued..._
 12. _To be continued..._
 13. _To be continued..._
-14. _To be continued..._
+
+14. [Команды работы со строками
+](question-14.md)
 
 15. [Команда трансляции по таблице
 ](question-15.md)
