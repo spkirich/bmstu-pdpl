@@ -63,6 +63,8 @@
 27. [Расширения процессора. MMX. Регистры. Типы данных
 ](question-27.md)
 
-28. _To be continued..._
+28. [Расширения процессора. MMX. Классификация команд
+](question-28.md)
+
 29. _To be continued..._
 30. _To be continued..._
