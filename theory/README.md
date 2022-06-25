@@ -60,7 +60,9 @@
 26. [Математический сопроцессор. Классификация команд
 ](question-26.md)
 
-27. _To be continued..._
+27. [Расширения процессора. MMX. Регистры. Типы данных
+](question-27.md)
+
 28. _To be continued..._
 29. _To be continued..._
 30. _To be continued..._
