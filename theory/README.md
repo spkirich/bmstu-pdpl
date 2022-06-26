@@ -54,7 +54,9 @@
 18. [Подпрограммы. Объявление. Вызов
 ](question-18.md)
 
-19. _To be continued..._
+19. [Подпрограммы. Возврат управления
+](question-19.md)
+
 20. _To be continued..._
 21. _To be continued..._
 22. _To be continued..._
