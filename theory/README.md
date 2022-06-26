@@ -56,7 +56,9 @@
 20. _To be continued..._
 21. _To be continued..._
 22. _To be continued..._
-23. _To be continued..._
+
+23. [Процессор 80386. Режимы работы. Регистры
+](question-23.md)
 
 24. [Математический сопроцессор. Типы данных
 ](question-24.md)
