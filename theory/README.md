@@ -51,7 +51,9 @@
 17. [Структура программы на языке ассемблера. Модули. Сегменты
 ](question-17.md)
 
-18. _To be continued..._
+18. [Подпрограммы. Объявление. Вызов
+](question-18.md)
+
 19. _To be continued..._
 20. _To be continued..._
 21. _To be continued..._
