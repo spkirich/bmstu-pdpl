@@ -30,7 +30,9 @@
 10. _To be continued..._
 11. _To be continued..._
 12. _To be continued..._
-13. _To be continued..._
+
+13. [Команды побитовых операций. Логические команды
+](question-13.md)
 
 14. [Команды работы со строками
 ](question-14.md)
